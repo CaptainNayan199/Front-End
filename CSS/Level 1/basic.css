@@ -1,6 +1,14 @@
+/* Universal Selector  - It is done by ' * '  */
+* {
+  background-color: aqua;
+}
+
 h1 {
   color: blue;
+  background-color: red;
 }
 #para {
   color: red;
 }
+
+/* This is how we do comment in CSS */
