@@ -1,14 +1,43 @@
 /* Universal Selector  - It is done by ' * '  */
 * {
-  background-color: aqua;
+  background-color: rgb(224, 231, 231);
 }
 
 h1 {
   color: blue;
   background-color: red;
 }
+/* Accessing ID using # */
 #para {
   color: red;
+}
+
+/* Accessing class using dot(.) */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+  outline: dotted 3px red;
+  border-radius: 10px;
+  /* text-align: center; */
+  display: grid;
+  place-items: center;
+}
+/* Group Selector */
+h1, h2, h3{
+  color: chartreuse;
+}
+
+/* Descendant Selector - */
+.main div{
+  box-shadow: 0px 0px 50px 30px rgb(91, 96, 91);
 }
 
 /* This is how we do comment in CSS */
