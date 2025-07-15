@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 50px;
+        width: 100px;
+        border: 2px solid red;
+        display: grid;
+        place-items: center;
+
+        /*We even use radius proprty of the border*/
+        /*border-radius: 20px;*/
+        /*OR*/
+        border-radius: 50px 10px 10px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Border creates an outline around html element. Has 3 major component, width(thickness), style(solid, dashed, dotted, etc) and color. So in shorthand we combine all these and use together. -->
+    <div class="container">Container</div>
+  </body>
+</html>

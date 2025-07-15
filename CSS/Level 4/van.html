@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        height: 50px;
+        width: 100px;
+        border: 2px solid red;
+        display: grid;
+        place-items: center;
+
+        /*We even use radius proprty of the border*/
+        /*border-radius: 20px;*/
+        /*OR*/
+        border-radius: 50px 10px 10px 10px;
+      }
+      .circ1 {
+        border: 2px solid red;
+        height: 13px;
+        width: 13px;
+        border-radius: 100%;
+        margin: 50px;
+        margin-left: 1px;
+      }
+      .circ2 {
+        border: 2px solid red;
+        height: 13px;
+        width: 13px;
+        border-radius: 100%;
+        position: relative;
+        margin-top: -114px;
+        margin-left: 70px;
+      }
+      .circ3 {
+        border: 2px solid red;
+        height: 10px;
+        width: 10px;
+        position: relative;
+        border-radius: 50px 0px 0px 0px;
+        height: 15px;
+        width: 15px;
+        margin-top: -200px;
+        margin-left: -68px;
+      }
+      .circ4 {
+        border: 2px solid red;
+        height: 40px;
+        width: 10px;
+        position: relative;
+        border-radius: 4px;
+        height: 15px;
+        width: 15px;
+        margin-top: -200px;
+        margin-left: -18px;
+      }
+      .circ5 {
+        border: 2px solid red;
+        height: 10px;
+        width: 10px;
+        position: relative;
+        border-radius: 4px;
+        height: 15px;
+        width: 15px;
+        margin-top: -200px;
+        margin-left: 30px;
+      }
+      .circ6 {
+        border: 2px solid red;
+        height: 10px;
+        width: 10px;
+        position: relative;
+        border-radius: 4px;
+        height: 15px;
+        width: 15px;
+        margin-top: -200px;
+        margin-left: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Border creates an outline around html element. Has 3 major component, width(thickness), style(solid, dashed, dotted, etc) and color. So in shorthand we combine all these and use together. -->
+    <div class="container">
+      <div class="circ1"></div>
+      <div class="circ2"></div>
+      <div class="circ3"></div>
+      <div class="circ4"></div>
+      <div class="circ5"></div>
+      <div class="circ6"></div>
+    </div>
+  </body>
+</html>
