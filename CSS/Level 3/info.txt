@@ -1,0 +1,8 @@
+In this level we are going to cover these below things : 
+1. Text-align
+2. Text Decoration
+3. Text transform
+4. Line-Height
+5. Font Properties
+6. Font Family
+7. Icon using fonts
