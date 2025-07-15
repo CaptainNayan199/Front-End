@@ -1,0 +1,13 @@
+In these level we will be looking at box model including; padding, margin, border.
+
+Box Model - Central concept in CSS that otlines the design and layout of elements on the web page.
+
+Box Model components : Consists of 4 main components - margin, border, padding, and content
+
+Margin - The space outside the border, seperating the element from others.
+
+Border - The outline that encapsulates the padding and content
+
+Padding : The space between the border and the actual content, providing a buffer.
+
+Content - Th innermost layer where text, images, or other media are housed.
