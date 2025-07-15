@@ -1,0 +1,7 @@
+Here in this level we will be covering these follow topics : 
+1. Background Property
+2. Color System
+3. Absolute Units
+4. Height and Width Property
+5. Background Image Property
+6. Visibility Property
