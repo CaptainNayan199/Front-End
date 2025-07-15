@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 50px;
+        padding: 0;
+      }
+      .container {
+        height: 50px;
+        width: 100px;
+        border: 2px solid red;
+        display: grid;
+        place-items: center;
+        border-radius: 20px;
+        /*Border box size will be as per the border. It will reduce the content size as well.*/
+        box-sizing: border-box;
+      }
+      .container2 {
+        height: 50px;
+        width: 100px;
+        border: 2px solid red;
+        display: grid;
+        place-items: center;
+        border-radius: 20px;
+        /*Border box size will be as per the content. content-box is the default one. It will not change the content size.*/
+        box-sizing: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">Container 1</div>
+    <div class="container2">Container 2</div>
+  </body>
+</html>
