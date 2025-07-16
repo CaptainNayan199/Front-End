@@ -1,0 +1,6 @@
+In this level we will be following these topics : 
+1. Display property
+2. Responsive Websites
+3. Relative Units
+4. Position property
+5. Semantic tags
