@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        margin: 40px;
+        border: 2px solid black;
+        height: 50px;
+        width: 100px;
+        text-align: center;
+        display: block; /*This means display is being block, it means it will take its all horizontal space.*/
+        display: inline; /*This means display is inline, it means it will take only it required space as per its inside elements. Now in inline display we cannot set the height and width.*/
+        display: inline-block; /*This means hybrid model - Now i can use inline property as well as change the height and width like in block display.*/
+      }
+    </style>
+  </head>
+  <body>
+    <!-- There will be two types of elements in HTML. -->
+    <!-- Bloakc elements- they take all the horizontal space, despite being them too small. Another element will always start in new line. They have their own margins and paddings. Eg: div, heading tags, p, li, ul, etc. So their default display property is block. -->
+    <!-- Inlne elements - They take only as much space as it is required for them. Size setting can be quite hard here.Eg : span, a, button, etc Their default display property is inline.  -->
+    <div class="parent">
+      <div id="div1" class="box">Box 1</div>
+      <div id="div2" class="box">Box 2</div>
+      <div id="div3" class="box">Box 3</div>
+    </div>
+  </body>
+</html>
