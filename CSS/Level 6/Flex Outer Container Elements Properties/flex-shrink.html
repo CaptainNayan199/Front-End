@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 150px;
+        width: 150px;
+        border: 3px solid red;
+        margin: 10px;
+        text-align: center;
+      }
+      .container {
+        height: 300px;
+        width: 600px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+        justify-content: center;
+      }
+      #box5 {
+        flex-shrink: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    Flex Shrink - This property in html defines how much a flex item will shrink relative to other items in the flex container if there is insufficeient space. It take numerical value,1 is its defaul value. That is other will also be shrinked by 1 as it is the default one. If its value is 2 than it means if other are shrinked by 10 percent than it will be srhinked by their double(2x10), if it is 3 than shrink by triple and so on. If its value is 0.5 than if other are shrinked by 10% than it will be shrinked by (10 x 0.5 = 5%). If given 0, it means other will be shrinked but the one whose flex-shrink is 0 will not be shrinked at all.
+     -->
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+      <div id="box5" class="box">Box 5</div>
+    </div>
+  </body>
+</html>
