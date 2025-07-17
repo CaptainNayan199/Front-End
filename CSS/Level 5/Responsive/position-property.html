@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #huhu {
+        margin: 20px;
+        border: 2px solid red;
+        height: 70px;
+        width: 70px;
+        text-align: center;
+      }
+      .cont1 {
+        position: static;
+      }
+      .cont2 {
+        position: relative;
+        top: 20px;
+        left: 100px;
+      }
+      .cont3 {
+        position: fixed;
+        top: 20px;
+        left: 100px;
+      }
+      .cont4 {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+      }
+      .container {
+        position: relative;
+        height: 400px;
+        width: 500px;
+        border: 3px solid black;
+      }
+      .container div {
+        height: 80px;
+        width: 100px;
+        border: 2px solid red;
+      }
+      #box1,
+      #box2,
+      #box3 {
+        position: absolute;
+        text-align: center;
+        font-size: 25px;
+      }
+      #box1 {
+        background-color: blue;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+      }
+      #box2 {
+        background-color: green;
+        top: 100px;
+        left: 100px;
+        z-index: 2;
+      }
+      #box3 {
+        background-color: orange;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Position means the placement of the elements in the html document.  -->
+    <!-- There are few properties like static, relative, absolute and fixed -->
+    <!-- Static - Means elements will follow the normal document flow. Default value. The normal starting default value. Z-index. top, right, bottom, left in this will not work.-->
+
+    <!-- Relative - Eelements position is adjusted from its normal position. Relative to itself. Eg: in default whereever the element is placed 10px to its right, 10px to left, 15 to top and so on. Basically relative to itself(its initial position).  -->
+
+    <!-- Absolute - Elements will be positioned relative to the nearest positioned ancenstor. It always starts from the top left corner of the page. It will then move x-axis(horizontally) and vertically(y-axis) to its position. When the position is absolute it kinda feels like it is floating above the screen and the other element will take its place. If we increase or decrease its value then it will move above the other element as like the upper hand is moving above the lower hand. -->
+
+    <!-- Fixed - Element is positioned relative to the viewport. and it does not move on scroll. Eg; navigation bar, it is kept fixed and while scrolling it doesnt change its position. It also stacked on top of another element like absolute but it remains fixed even during the scrolling.  -->
+
+    <!-- Z-index - Determines te stacking order of elements along the z-asix(3D). Only applies to elements with position set to relative, absolute, fixed or sticky. Elements with higher z-index value appears above others. DEFAULT VALUE OF THIS IS 0. Doenst works with position static. -->
+
+    <div id="huhu" class="cont1">Statc</div>
+    <div id="huhu" class="cont2">Relative</div>
+    <div id="huhu" class="cont3">Fixed</div>
+    <div id="huhu" class="cont4">Absolute</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <div id="huhu">Box</div>
+    <hr />
+    <div class="container">
+      <div id="box1">Box 1</div>
+      <div id="box2">Box 2</div>
+      <div id="box3">Box 3</div>
+    </div>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <div>Huhuhu</div>
+  </body>
+</html>
