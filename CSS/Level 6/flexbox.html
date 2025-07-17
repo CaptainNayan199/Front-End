@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        border: 3px solid red;
+        margin: 10px;
+        text-align: center;
+      }
+      .container {
+        height: 150px;
+        width: 600px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Flex Box is a one dimensional layout methods for arrangin in rows or columns. Items flex(Expand) to fill additional space or shrink to fit into smaller spaces. -->
+
+    <!-- The outer box is called container that has multiple elements, and those elements are called flex items. -->
+
+    <!-- 
+    Main-axis means horizontal(left to right)
+    Cross-axis means vertical(top to bottom)
+    When we do display flex in any container, items gets  arranged in main axis(rows). It is the default. We can alter it by using flex direction 
+    property.
+
+    Under flex direciton property we have values like row(the default), column, row reverse, column reverse.
+    -->
+
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+    </div>
+  </body>
+</html>
