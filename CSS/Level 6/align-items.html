@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 60px;
+        width: 60px;
+        border: 3px solid red;
+        margin: 10px;
+        text-align: center;
+      }
+      .container {
+        height: 500px;
+        width: 600px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    Align Item - It is used to align the flex container's items along the cross-axis, which is perpendicular to the main axis that is in vertical manner. It aligns elements in top-bottom approach. It has values like center, end, start(the main 3 one).
+     -->
+
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+      <div id="box5" class="box">Box 5</div>
+    </div>
+  </body>
+</html>
