@@ -1,0 +1,4 @@
+Media Query tailor styles for specific device chacateristics.
+Used to create responsive web designs.
+Apply styles based on conditions like screen size.
+Syntax : @media(condition){css rules}
