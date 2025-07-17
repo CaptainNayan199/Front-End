@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 100px;
+        width: 150px;
+        border: 3px solid red;
+        margin: 10px;
+        text-align: center;
+      }
+      .container {
+        height: 600;
+        width: 600px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    Flex-Wrap - It is used to distribute the items to prevent shrinking. The item that will not be fitted on that particular row will now move to new row.
+    Flex Wrap has properties like : 
+    nowrap - default, that means the elements will shrink rather than moving to new row.
+    wrap - elements will go to new row if not space available.
+    wrap-reverse - New elements will not go below in new row, rather it will go in upper section forming new row. That means if there are 4 box, then the 3 box will go lower and the unfitted one will come to top, simply as opposite to wrap.Eg:  Used to show must recent items to come on top.
+     -->
+
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+      <div id="box5" class="box">Box 5</div>
+      <div id="box5" class="box">Box 5</div>
+      <div id="box5" class="box">Box 5</div>
+    </div>
+  </body>
+</html>
