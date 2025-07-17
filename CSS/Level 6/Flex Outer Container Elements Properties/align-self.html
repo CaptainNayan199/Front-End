@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        height: 60px;
+        width: 60px;
+        border: 3px solid red;
+        margin: 10px;
+        text-align: center;
+      }
+      .container {
+        height: 500px;
+        width: 600px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      #box5 {
+        align-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    Align Self  - As like align items and align content works on the container that the flex is being applied, align self works on individual elements inside that container. AS in here, there are 5 box with their repective id, the main outer container has align items center, so all the items will be in center of cross axis. But for box 5, i have overriden that with  align self end and hence in the output we can see that the 4 other box are in the center but that particualar element is in the end. So to tweak single or some element inside the container regarding its alignment we can use this property. Has more prioities as well. -->
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+      <div id="box5" class="box">Box 5</div>
+    </div>
+  </body>
+</html>
