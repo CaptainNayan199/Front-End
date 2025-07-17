@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 800px;
+        padding: 10px;
+        margin: 20px;
+        border: 3px solid black;
+        display: flex;
+      }
+
+      .box {
+        height: 75px;
+        margin: 10px;
+        border: 3px solid red;
+        text-align: center;
+        line-height: 75px;
+        color: white;
+        font-weight: bold;
+      }
+
+      #box1 {
+        flex-grow: 1;
+        background: crimson;
+      }
+      #box2 {
+        flex-grow: 2;
+        background: orange;
+      }
+      #box3 {
+        flex-grow: 3;
+        background: seagreen;
+      }
+      #box4 {
+        flex-grow: 4;
+        background: steelblue;
+      }
+      #box5 {
+        flex-grow: 5;
+        background: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    Flex Grow - This property in CSS psecifies how much a flex item will grow relative to other items in the flex container when additional space is available. Just opposite of flex shrink. Default is 0.
+     -->
+    <div class="container">
+      <div id="box1" class="box">Box 1</div>
+      <div id="box2" class="box">Box 2</div>
+      <div id="box3" class="box">Box 3</div>
+      <div id="box4" class="box">Box 4</div>
+      <div id="box5" class="box">Box 5</div>
+    </div>
+  </body>
+</html>
