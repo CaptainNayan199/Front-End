@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin: 50px;
+        border: 2px solid black;
+        height: 250px;
+        width: 300px;
+        background-color: rgb(183, 237, 183);
+        display: grid;
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 150px;
+      }
+      .container div {
+        margin: 8px;
+        border: 1px solid red;
+        height: 50px;
+        width: 80px;
+        text-align: center;
+      }
+      .item1 {
+        background-color: aqua;
+      }
+      .item2 {
+        background-color: rgb(204, 140, 140);
+      }
+      .item3 {
+        background-color: rgb(242, 223, 149);
+      }
+      .item4 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        background-color: rgb(246, 136, 242);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Grid is a 2d layout systems for rows and columns. Chidlren becomes grid items. Structure is defined with grid templapte properties. Individual units are called grid cells. -->
+    <div class="container">
+      <div class="item1">Item 1</div>
+      <div class="item2">Item 2</div>
+      <div class="item3">Item 3</div>
+      <div class="item4">Item 4</div>
+    </div>
+  </body>
+</html>
