@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .zero {
+        position: relative;
+        top: 65px;
+        left: 105px;
+        font-size: 20px;
+      }
+      .hundred {
+        position: relative;
+        top: 43px;
+        left: 650px;
+        font-size: 20px;
+      }
+      .main {
+        position: relative;
+        top: 50px;
+        left: 100px;
+        height: 20px;
+        width: 80%;
+        border: 2px solid black;
+        border-radius: 20px;
+      }
+      .container {
+        height: 100%;
+        border-radius: 20px;
+        background-color: rgb(135, 14, 14);
+        animation: progress_bar 4s ease-in-out;
+      }
+      @keyframes progress_bar {
+        0% {
+          width: 0%;
+        }
+        90% {
+          width: 90%;
+        }
+        95% {
+          width: 60%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="zero">0%</p>
+    <p class="hundred">100%</p>
+    <div class="main">
+      <div class="container"></div>
+    </div>
+  </body>
+</html>
