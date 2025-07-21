@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 100px;
+        padding: 10px;
+      }
+      .but {
+        height: 50px;
+        width: 150px;
+        border: 2px solid rgb(197, 185, 185);
+        font-size: 20px;
+        border-radius: 10px;
+        /*All means apply transition to all hover properties*/
+        transition-property: all;
+        transition-duration: 1s;
+        /* transition-timing-function: ease-in-out;*/
+        /*Steps defines in how many steps the transition will be completed.*/
+        transition-timing-function: steps(5);
+        transition-delay: 0s;
+
+        /*Now abov 4 transition property can be defined in one single line as below*/
+        transition: all 1s ease-in-out 1s;
+      }
+      .but:hover {
+        background-color: aqua;
+        border: 2px solid green;
+        height: 100px;
+        width: 200px;
+      }
+      .but:active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Transitions -  It is a pererty that enables smooth animation between changes in CSS property values.
+   It has multiple values like : 
+   transition-property - defines which CSS properties will transitions
+   transitions-duration -  sets how long the transitions last.
+   transition-timing-function - controls the speed curve of the transitions.
+   transition-delay - specifies a delay before the transition starts.
+   
+  We need to define the intial and final stage and this will work smoothly.  -->
+
+    <button class="but">Transitions</button>
+  </body>
+</html>
