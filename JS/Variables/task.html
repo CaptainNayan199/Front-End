@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        margin: 30px;
+      }
+      .b1,
+      .b3 {
+        background-color: rgb(138, 242, 117);
+        padding: 7px 20px;
+        border: none;
+        border-radius: 11px;
+      }
+      .b2 {
+        background-color: rgb(249, 243, 243);
+        padding: 7px 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="b1"
+      onclick="
+    qty++;
+          document.querySelector(
+        '.detail'
+      ).innerHTML = `Your bag has ${qty} items.`;
+    "
+    >
+      Add to Bag
+    </button>
+
+    <button
+      class="b2"
+      onclick="
+    qty--;
+          document.querySelector(
+        '.detail'
+      ).innerHTML = `Your bag has ${qty} items.`;
+    "
+    >
+      MOVE TO WOSHLIST
+    </button>
+
+    <button
+      class="b3"
+      onclick="
+    qty+=2;
+          document.querySelector(
+        '.detail'
+      ).innerHTML = `Your bag has ${qty} items.`;
+    "
+    >
+      Add 1+1 sale item
+    </button>
+
+    <h1 class="detail"></h1>
+    <script>
+      let qty = 0;
+      document.querySelector(
+        ".detail"
+      ).innerHTML = `Your bag has ${qty} items.`;
+    </script>
+  </body>
+</html>
