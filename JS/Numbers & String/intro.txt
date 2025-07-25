@@ -2,6 +2,5 @@ In this chapter we are going to see about these following topics :
 1. Arithmetic operators
 2. Order of Operations
 3. Types of Numbers (Integers & Floats)
-4. Don't learn Syntax
-5. Strings
-7. Types of operators
+4. Strings
+5. Types of operators
