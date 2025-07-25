@@ -1,0 +1,2 @@
+JS is one of the most popular programming language. It is mostly used to build dynamic websites and nowadays even in app and AI sector.
+We can run JS in console of the website or in our native window as well by installing node.
