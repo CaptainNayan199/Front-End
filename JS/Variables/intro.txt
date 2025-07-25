@@ -1,0 +1,7 @@
+In this chapter we are going to see about these follow things : 
+1. Variables intro
+2. Syntax rules
+3. updating rules
+4. Exercise
+5. Naming convention
+6. Ways to create Variables
