@@ -5,3 +5,6 @@
 let camelCaseExample
 // snake case - start with lower case word and add underscore(_) and give another word
 let snake_case_example
+
+// kebak case - seperate two or more words with hyphens - not possible/allowed in js
+// let kebab-case -example
