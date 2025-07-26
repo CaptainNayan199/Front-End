@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+        border: 1px solid rgb(145, 137, 137);
+        border-radius: 10px;
+        height: 610px;
+        width: 20%;
+      }
+      .enter {
+        padding: 15px;
+        width: 80%;
+      }
+      .enter input {
+        border: 1px solid black;
+        height: 40px;
+        width: 100%;
+      }
+      .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .icons button {
+        font-size: 30px;
+        font-weight: 700;
+        height: 80px;
+        width: 80px;
+        background-color: rgb(235, 235, 235);
+        margin: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="enter">
+        <input type="text" id="first" readonly />
+      </div>
+      <div class="icons">
+        <button
+          onclick="
+        currentValue =''
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          C
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '1'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          1
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '2'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          2
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '+'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          +
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '3'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          3
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '4'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          4
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '-'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          -
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '5'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          5
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '6'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          6
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '*'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          *
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '7'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          7
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '8'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          8
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '/'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          /
+        </button>
+        <button
+          onclick="
+        let result = eval(currentValue)
+        currentValue = result
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          =
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '9'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          9
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '0'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          0
+        </button>
+        <button
+          onclick="
+        currentValue = currentValue + '.'
+        document.querySelector('#first').value = currentValue
+        "
+        >
+          .
+        </button>
+      </div>
+    </div>
+    <script>
+      let currentValue = "";
+      document.querySelector("#first").value = currentValue;
+    </script>
+  </body>
+</html>
