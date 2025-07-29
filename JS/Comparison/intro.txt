@@ -1,0 +1,9 @@
+In this section we are going to cover this things : 
+1. Booleans intro
+2. Comparison Operators
+3. if-else
+4. Logical Operators
+5. Scope
+6. Truthy and Falsy Values
+7. If alternates
+
