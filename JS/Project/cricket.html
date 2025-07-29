@@ -3,7 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cricket</title>
   </head>
-  <body></body>
+  <body style="text-align: center">
+    <h1>Bat Ball Stump Game</h1>
+    <button
+      onclick="
+    console.log('Choosed Bat')
+    let randomNumber = Math.random() * 3
+    let computerChoice = ''
+    if(randomNumber > 0 && randomNumber <=1){
+       computerChoice = 'Bat'
+    }else if(randomNumber > 1 && randomNumber <=2){
+       computerChoice = 'Ball'
+    }else{
+       computerChoice = 'Stump'
+    }
+
+    if(computerChoice === 'Ball'){
+      console.log('User Won!')
+    }
+    "
+    >
+      Bat
+    </button>
+    <button>Ball</button>
+    <button>Stump</button>
+    <script></script>
+  </body>
 </html>
