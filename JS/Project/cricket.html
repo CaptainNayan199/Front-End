@@ -9,7 +9,7 @@
     <h1>Bat Ball Stump Game</h1>
     <button
       onclick="
-    console.log('Choosed Bat')
+    document.querySelector('#user').innerHTML = 'User choosed Bat.'
     let randomNumber = Math.random() * 3
     let computerChoice = ''
     if(randomNumber > 0 && randomNumber <=1){
@@ -19,18 +19,51 @@
     }else{
        computerChoice = 'Stump'
     }
+    document.querySelector('#computer').innerHTML = 'Computer choosed '+computerChoice
     if(computerChoice === 'Ball'){
-      console.log('User Won!')
+      document.querySelector('#score').innerHTML = 'User Won!'
     }
     else if(computerChoice === 'Bat'){
-      console.log('Draw Score!')
+      document.querySelector('#score').innerHTML = 'Draw Score!'
+    }
+      else if(computerChoice === 'Stump'){
+      document.querySelector('#score').innerHTML = 'Computer Won!'
     }
     "
     >
       Bat
     </button>
-    <button>Ball</button>
+    <button
+      onclick="
+    document.querySelector('#user').innerHTML = 'User choosed Ball.'
+    let randomNumber2 = Math.random() * 3
+    let computerChoice2 = ''
+    if(randomNumber2 > 0 && randomNumber2 <=1){
+       computerChoice2 = 'Bat'
+    }else if(randomNumber2 > 1 && randomNumber2 <=2){
+       computerChoice2 = 'Ball'
+    }else{
+       computerChoice2 = 'Stump'
+    }
+    document.querySelector('#computer').innerHTML = 'Computer choosed '+computerChoice2
+    if(computerChoice2 === 'Ball'){
+      document.querySelector('#score').innerHTML = 'User Won!'
+    }
+    else if(computerChoice2 === 'Bat'){
+      document.querySelector('#score').innerHTML = 'Draw Score!'
+    }
+      else if(computerChoice2 === 'Stump'){
+      document.querySelector('#score').innerHTML = 'Computer Won!'
+    }
+    "
+    >
+      Ball
+    </button>
     <button>Stump</button>
+    <br />
+    <h5 id="user"></h5>
+    <h5 id="computer"></h5>
+    <h5 id="score"></h5>
     <script></script>
   </body>
 </html>
