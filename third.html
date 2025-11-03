@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        margin: 100px;
+        height: 100px;
+        width: 400px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+      }
+      .answer {
+        height: 40px;
+        width: 100px;
+        background-color: aqua;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button
+        onclick="
+      initialVlue++
+      document.querySelector('.answer').innerText = initialVlue;
+      "
+        class="first"
+      >
+        Increase
+      </button>
+      <button class="answer">0</button>
+      <button
+        onclick="
+        if(initialVlue <=0){
+        document.querySelector('.answer').innerText = 'Sorry!'
+        return
+        }
+      initialVlue--
+      document.querySelector('.answer').innerHTML = initialVlue
+      "
+        class="second"
+      >
+        Decrease
+      </button>
+    </div>
+    <script>
+      let initialVlue = 0;
+      //let firstButton = document.querySelector('.first')
+    </script>
+  </body>
+</html>
