@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <p id="first">This is my first paragraph.</p>
+  <p class="second">This is my Second paragraph.</p> -->
+
+    <!-- <ul>
+    <li id="list">Apple</li>
+    <li>Mango</li>
+    <li>Pineapple</li>
+  </ul> -->
+
+    <!-- <div class="container">This is a container.</div> -->
+
+    <!-- <p id="list">World</p>
+  <p id="list">Hello</p> -->
+    <!-- 
+  <p class="first">This is my first paragraph</p>
+  <p class="second">This is my second paragraph</p>
+  <p class="third">This is my third paragraph</p> -->
+
+    <div class="container">This is a second container</div>
+
+    <div id="batta">
+      <ul id="list">
+        <li class="bca">BCA</li>
+        <li>BBA</li>
+        <li>BIT</li>
+        <li>BIM</li>
+        <li>BHM</li>
+      </ul>
+    </div>
+
+    <p class="hehe">This is before.</p>
+
+    <!-- There are five different ways in JS to access HTML elements.  -->
+    <!-- 1. Get Element by Id  ✅ - Finds the first matched element. -->
+
+    <!-- 2. Get element by class name : This searches for all the class names and adds it inside a list(array) -->
+
+    <!-- 3. Get element by Tag name : Returns value in an array. -->
+
+    <!-- 4. Query selector : Seelcts the first founded element. THe query are present inside the braces as like CAA queries.  -->
+
+    <!-- 5. Query selector All -->
+
+    <div class="huhu"></div>
+
+    <script>
+      let element = document.querySelector(".hehe");
+      console.log(element.textContent);
+
+      userInput = "Nayan";
+
+      element.innerText = userInput;
+
+      let second = document.querySelector(".hehe");
+      console.log(second.textContent);
+
+      let div = document.querySelector('.huhu').innerHTML = `
+      <p id="hahaha"> This is a paragraph. </p>
+      `
+      console.log(div)
+    </script>
+  </body>
+</html>

@@ -55,11 +55,39 @@
       else if(computerChoice2 === 'Stump'){
       document.querySelector('#score').innerHTML = 'Computer Won!'
     }
+
     "
     >
       Ball
     </button>
-    <button>Stump</button>
+    <button
+      onclick="
+    document.querySelector('#user').innerHTML = 'User choosed Stump'
+    let randomNumber3 = Math.random()*3
+    let computerChoice3 = ''
+    if(randomNumber3 >0 & randomNumber3 <=1){
+    computerChoice3 = 'Bat'
+    }else if(randomNumber3>1 & randomNumber3 <=2){
+    computerChoice3 = 'Ball'
+    }else{
+    computerChoice3 = 'Stump'
+    }
+    
+    document.querySelector('#computer').innerText = 'Computer Choosed : '+computerChoice3
+    
+    
+    if(computerChoice3 === 'Bat'){
+    document.querySelector('#score').innerText = 'User Won'
+    }else if(computerChoice3 === 'Ball'){
+    document.querySelector('#score').innerText = 'Computer Won'
+    }else{
+    document.querySelector('#score').innerText = 'Draw Score!'
+    }
+
+    "
+    >
+      Stump
+    </button>
     <br />
     <h5 id="user"></h5>
     <h5 id="computer"></h5>
