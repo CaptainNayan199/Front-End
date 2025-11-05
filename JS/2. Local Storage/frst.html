@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Local Storage - There is one object in JS with the name localStorage whichcan be used to store data locally, so that our data will not get lost in futureretrieval. It has two method - setItem and getItem. setItem takes two parameter: key and valueStore an object in Local Storage - key value all mu`st be in string(JSON format)
+
+      localStorage.setItem("user", "Nayan Pathak");
+      // Now even the above code is removed, the local Storage is stored permanently.
+
+      console.log(localStorage.getItem("user"));
+
+      let prod = {
+        name: "Apple",
+        size: 100,
+        isDelicious: true,
+        additional_info: {
+          id: 101,
+          number: 989898989,
+        },
+      };
+
+      localStorage.setItem("Apple_Info", JSON.stringify(prod));
+      //so this is how we can store data in our local storage.
+
+      // Removing any locally store data.
+
+      localStorage.removeItem("user");
+
+      // Clearing all local storage
+
+      localStorage.clear();
+    </script>
+  </body>
+</html>

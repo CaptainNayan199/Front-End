@@ -20,8 +20,10 @@ let jsonObj = {
 
 let newStr = JSON.stringify(jsObj) // converting to normal object(string)
 console.log(newStr);
+console.log(typeof newStr);
 
 
 let newObj = JSON.parse(newStr) // converting string back to object.
 console.log(newObj);
+console.log(typeof newObj);
 

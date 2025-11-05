@@ -50,14 +50,7 @@
         <input type="text" id="first" readonly />
       </div>
       <div class="icons">
-        <button
-          onclick="
-        currentValue =''
-        document.querySelector('#first').value = currentValue
-        "
-        >
-          C
-        </button>
+        <button class="clear">C</button>
         <button
           onclick="
         currentValue = currentValue + '1'
@@ -192,6 +185,10 @@
     <script>
       let currentValue = "";
       document.querySelector("#first").value = currentValue;
+      document.querySelector(".clear").onclick = () => {
+        currentValue = "";
+        document.querySelector("#first").value = currentValue;
+      };
     </script>
   </body>
 </html>
