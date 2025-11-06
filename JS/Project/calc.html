@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .zero {
+        height: 70px;
+        width: 217px;
+      }
+      .plus {
+        height: 150px;
+        width: 70px;
+        position: relative;
+        right: 80px;
+        top: -0px;
+      }
+
+      button {
+        height: 70px;
+        width: 70px;
+        font-size: 30px;
+        border-radius: 10px;
+        border: 0.1px solid grey;
+      }
+
+      .main {
+        flex-wrap: wrap;
+        height: 480px;
+        width: 293px;
+        padding: 5px 10px 5px 10px;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid black;
+        margin-top: 60px;
+      }
+      input {
+        padding-top: 50px;
+        border: 0.1 px grey;
+        text-align: right;
+        font-size: 23px;
+        color: red;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <input type="text" />
+      <div class="first">
+        <button class="clear">C</button>
+        <button class="divied">/</button>
+        <button class="multiply">*</button>
+        <button class="miuns">-</button>
+      </div>
+      <div class="second">
+        <button class="seven">7</button>
+        <button class="eight">8</button>
+        <button class="nine">9</button>
+      </div>
+      <div class="third">
+        <button class="four">4</button>
+        <button class="five">5</button>
+        <button class="six">6</button>
+      </div>
+      <div class="fourth">
+        <button class="one">1</button>
+        <button class="two">2</button>
+        <button class="three">3</button>
+        <button class="equal">=</button>
+      </div>
+      <div class="fifth">
+        <button class="zero">0</button>
+        <button class="dot">.</button>
+      </div>
+      <button class="plus">+</button>
+    </div>
+  </body>
+</html>

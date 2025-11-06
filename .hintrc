@@ -12,6 +12,7 @@
     ],
     "axe/forms": "off",
     "axe/text-alternatives": "off",
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "meta-charset-utf-8": "off"
   }
 }
