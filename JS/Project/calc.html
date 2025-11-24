@@ -44,15 +44,18 @@
         border-radius: 10px;
         flex-direction: column;
         gap: 10px;
-        border: 1px solid black;
-        margin-top: 60px;
+        border: 5px solid rgb(216, 215, 215);
+        margin-top: 200px;
+        box-shadow: 0px 10px 100px 30px rgb(216, 215, 215);
       }
       input {
         padding-top: 50px;
-        border: 0.1 px grey;
+        border: 1px solid transparent;
+        box-shadow: 0px 10px 100px 30px rgb(216, 215, 215);
         text-align: right;
         font-size: 23px;
-        color: red;
+        color: black;
+        border-radius: 10px;
       }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,12 +64,12 @@
 
   <body>
     <div class="main">
-      <input type="text" />
+      <input type="text" readonly />
       <div class="first">
         <button class="clear">C</button>
-        <button class="divied">/</button>
+        <button class="divide">/</button>
         <button class="multiply">*</button>
-        <button class="miuns">-</button>
+        <button class="minus">-</button>
       </div>
       <div class="second">
         <button class="seven">7</button>
@@ -90,5 +93,95 @@
       </div>
       <button class="plus">+</button>
     </div>
+    <script>
+      let currentValue = "";
+
+      document.querySelector(".seven").onclick = () => {
+        currentValue = currentValue + 7;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".eight").onclick = () => {
+        currentValue = currentValue + 8;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".nine").onclick = () => {
+        currentValue = currentValue + 9;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".four").onclick = () => {
+        currentValue = currentValue + 4;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".five").onclick = () => {
+        currentValue = currentValue + 5;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".six").onclick = () => {
+        currentValue = currentValue + 6;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".one").onclick = () => {
+        currentValue = currentValue + 1;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".two").onclick = () => {
+        currentValue = currentValue + 2;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".three").onclick = () => {
+        currentValue = currentValue + 3;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".zero").onclick = () => {
+        currentValue = currentValue + 0;
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".dot").onclick = () => {
+        currentValue = currentValue + ".";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".plus").onclick = () => {
+        currentValue = currentValue + "+";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".divide").onclick = () => {
+        currentValue = currentValue + "/";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".multiply").onclick = () => {
+        currentValue = currentValue + "*";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".minus").onclick = () => {
+        currentValue = currentValue + "-";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".clear").onclick = () => {
+        currentValue = "";
+        document.querySelector("input").value = currentValue;
+      };
+
+      document.querySelector(".equal").onclick = () => {
+        let result = eval(currentValue);
+        currentValue = result;
+        document.querySelector("input").value = currentValue;
+        currentValue = "";
+      };
+    </script>
   </body>
 </html>

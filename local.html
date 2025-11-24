@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .main {
+        text-align: center;
+        margin: 50px;
+        height: 900px;
+        background-color: lightcyan;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      input {
+        display: block;
+        margin: 10px;
+        text-align: center;
+        height: 30px;
+        width: 300px;
+        font-size: 20px;
+      }
+
+      label {
+        margin: 10px;
+        font-size: 20px;
+      }
+      button {
+        height: 30px;
+        width: 70px;
+        display: block;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        background-color: rgb(7, 7, 7);
+      }
+
+      .savedColor {
+        color: red;
+      }
+
+      .resetColor {
+        color: red;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <label for="userName">Enter your name 👇</label>
+      <input type="text" class="userName" />
+      <label for="userAge">Enter your age 👇</label>
+      <input type="text" class="userAge" />
+      <label for="userGender">Enter your gender 👇</label>
+      <input type="text" class="userGender" />
+      <label for="userGender">Enter your phone number 👇</label>
+      <input type="text" class="userNumber" />
+
+      <button type="submit" class="saveData">Save</button>
+      <p class="saveSavedStatus">Saved status will be shown here.</p>
+
+      <h3>Do you want to reset your data from local storage (yes \ no) ?</h3>
+      <button type="submit" class="yes">Yes</button>
+      <button type="submit" class="no">No</button>
+      <p class="saveResetStatus">Reset status will be shown here.</p>
+    </div>
+    <script>
+      window.onload = function () {
+        localStorage.clear();
+      };
+      function saveUserData() {
+        let name = document.querySelector(".userName").value;
+        let age = document.querySelector(".userAge").value;
+        let gender = document.querySelector(".userGender").value;
+        let number = document.querySelector(".userNumber").value;
+        console.log(name, age, gender, number);
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userAge", age);
+        localStorage.setItem("userGender", gender);
+        localStorage.setItem("userNumber", number);
+        document.querySelector(".saveSavedStatus").classList.add("savedColor");
+
+        document.querySelector(".saveSavedStatus").innerText =
+          "Data saved successfully";
+
+        setTimeout(() => {
+          document.querySelector(".saveSavedStatus").innerText = "";
+        }, 3000);
+      }
+
+      function blankInputs() {
+        document.querySelector(".userName").value = "";
+        document.querySelector(".userAge").value = "";
+        document.querySelector(".userGender").value = "";
+        document.querySelector(".userNumber").value = "";
+      }
+
+      function resetYes() {
+        localStorage.clear();
+        document.querySelector(".saveResetStatus").classList.add("resetColor");
+        document.querySelector(".saveResetStatus").innerText =
+          "Data Deleted Successfully";
+        setTimeout(() => {
+          document.querySelector(".saveResetStatus").innerText = "";
+        }, 4000);
+      }
+
+      function resetNo() {
+        document.querySelector(".saveResetStatus").innerText =
+          "Thanks for confirming. Your data is still saved successfully.";
+        setTimeout(() => {
+          document.querySelector(".saveResetStatus").innerText = "";
+        }, 4000);
+      }
+
+      document.querySelector(".yes").onclick = () => {
+        resetYes();
+      };
+
+      document.querySelector(".no").onclick = () => {
+        resetNo();
+      };
+
+      document.querySelector(".saveData").onclick = () => {
+        saveUserData();
+        blankInputs();
+      };
+    </script>
+  </body>
+</html>

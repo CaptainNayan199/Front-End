@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- User chooses how many questions -->
+    <input
+      id="countInput"
+      type="number"
+      placeholder="How many questions? (1-10)"
+    />
+    <button id="startBtn">Start</button>
+
+    <hr />
+
+    <!-- Same box used for all questions -->
+    <p id="questionText">Click Start to begin</p>
+
+    <input id="answerInput" type="text" placeholder="Your answer" />
+    <button id="submitBtn">Submit</button>
+
+    <p id="status"></p>
+
+    <script>
+      const questions = [
+        "Capital of Nepal?",
+        "2 + 2?",
+        "Color of sky?",
+        "Largest mammal?",
+        "HTML stands for?",
+        "CSS stands for?",
+        "JS stands for?",
+        "Fastest land animal?",
+        "Full form of RAM?",
+        "Full form of CPU?",
+      ];
+
+      const answers = [
+        "kathmandu",
+        "4",
+        "blue",
+        "blue whale",
+        "hypertext markup language",
+        "cascading style sheets",
+        "javascript",
+        "cheetah",
+        "random access memory",
+        "central processing unit",
+      ];
+
+      let howMany = 0;
+      let current = 0;
+      let score = 0;
+
+      // When user clicks "Start"
+      document.querySelector("#startBtn").onclick = () => {
+        howMany = Number(document.querySelector("#countInput").value);
+
+        if (howMany < 1 || howMany > 10) {
+          alert("Enter a number between 1 and 10");
+          return;
+        }
+
+        current = 0;
+        score = 0;
+        showQuestion();
+      };
+
+      // When user clicks "Submit"
+      document.querySelector("#submitBtn").onclick = () => {
+        const user = document
+          .querySelector("#answerInput")
+          .value.toLowerCase()
+          .trim();
+
+        if (user === answers[current]) {
+          score++;
+          document.querySelector("#status").innerText = "Correct!";
+        } else {
+          document.querySelector("#status").innerText = "Wrong!";
+        }
+
+        current++;
+
+        if (current >= howMany) {
+          document.querySelector(
+            "#questionText"
+          ).innerText = `Quiz finished! Your score: ${score}/${howMany}`;
+          return;
+        }
+
+        showQuestion();
+      };
+
+      // Function that shows the question text
+      function showQuestion() {
+        document.querySelector("#questionText").innerText = questions[current];
+
+        document.querySelector("#answerInput").value = "";
+        document.querySelector("#status").innerText = "";
+      }
+    </script>
+  </body>
+</html

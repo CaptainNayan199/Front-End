@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="display: flex; justify-content: center">
+      <h2 class="display">Time will be displayed here.</h2>
+    </div>
+    <button type="button">Start</button>
+    <script>
+      let timer;
+      let remaining;
+
+      function startTimer() {
+        //clearInterval(timer);
+
+        remaining = 50;
+
+        if (isNaN(remaining) || remaining <= 0) {
+          document.querySelector(".display").innerText = "Enter valid seconds";
+          return;
+        }
+
+        document.querySelector(".display").innerText = remaining;
+
+        timer = setInterval(() => {
+          remaining--;
+          document.querySelector(".display").innerText = remaining;
+
+          if (remaining <= 0) {
+            clearInterval(timer);
+            document.querySelector(".display").innerText = "Time up!";
+          }
+        }, 1000);
+      }
+
+      document.querySelector("button").onclick = () => {
+        startTimer();
+      };
+    </script>
+  </body>
+</html>

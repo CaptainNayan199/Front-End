@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">New div</div>
+    <script>
+      let newElement = document.createElement("Button"); // creates a new element - doesnt add in the document to be seen directly.
+
+      newElement.innerText = "Click me";
+
+      document.querySelector(".main").appendChild(newElement); // the new child is been appended in the main container.
+
+      document.querySelector(".main").removeChild(newElement); // the new child is been removed from the container.
+
+      // Replace child can also be done there using replaceChild() method.
+    </script>
+  </body>
+</html>

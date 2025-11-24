@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      body {
+        text-align: center;
+      }
+      .main {
+        margin: 50px;
+        height: 500px;
+      }
+      .main .userName {
+        margin: 15px;
+        height: 30px;
+        width: 200px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .main .userLabel {
+        font-size: 20px;
+      }
+      .getTime {
+        display: block;
+        margin-top: 20px;
+        margin-left: 300px;
+        height: 30px;
+        width: 100px;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      .displayDate {
+        margin-top: 20px;
+        color: red;
+        font-weight: 700;
+        font-size: 25px;
+      }
+      .onPressed {
+        display: block;
+        margin-top: 20px;
+        margin-left: 300px;
+        height: 30px;
+        width: 100px;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+
+      .oddColor {
+        background-color: red;
+      }
+      .evenColor {
+        background-color: rgb(83, 238, 106);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <label for="userName" class="userLabel">Enter your name please : </label>
+      <input type="text" class="userName" />
+      <button type="submit" class="getTime">Greet Me</button>
+      <p class="displayDate">Click the 👆 above button</p>
+      <button class="onPressed">0</button>
+    </div>
+    <script>
+      function showTime() {
+        let userName = document.querySelector(".userName").value;
+        let newDate = new Date();
+        let hours = newDate.getHours();
+        if (hours > 5 && hours < 12) {
+          document.querySelector(".displayDate").innerText =
+            "Good morning! " + userName;
+        } else if (hours > 12 && hours < 15) {
+          document.querySelector(".displayDate").innerText =
+            "Good afternoon! " + userName;
+        } else if (hours > 14 && hours < 19) {
+          document.querySelector(".displayDate").innerText =
+            "Good evening! " + userName;
+        } else {
+          document.querySelector(".displayDate").innerText =
+            "Good night! " + userName;
+        }
+      }
+
+      let initial = 0;
+      function counter() {
+        initial++;
+        document.querySelector(".onPressed").innerText = initial;
+        if (initial % 2 == 0) {
+          document.querySelector(".onPressed").classList.add("evenColor");
+          document.querySelector(".onPressed").classList.remove("oddColor");
+        } else {
+          document.querySelector(".onPressed").classList.add("oddColor");
+          document.querySelector(".onPressed").classList.remove("evenColor");
+        }
+      }
+
+      document.querySelector(".getTime").onclick = () => {
+        showTime();
+      };
+
+      document.querySelector(".onPressed").onclick = () => {
+        counter();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Enter any Number : <input type="text" class="enter" />
+    <button class="click">Check</button>
+    <input type="text" class="result" readonly style="width: 250px" />
+    <script>
+      document.querySelector(".click").onclick = () => {
+        let number = Number(document.querySelector(".enter").value);
+        let counter = 0;
+        for (let i = 1; i <= number; i++) {
+          if (number % i == 0) {
+            counter++;
+          }
+
+          if (counter > 2) {
+            document.querySelector(".result").value =
+              "No! ❌. It's not a prime Number.";
+          } else {
+            document.querySelector(".result").value =
+              "Yes! ✅. It's a prime Number.";
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

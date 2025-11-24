@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="hehe">Click me</button>
+    <div class="container">
+      <ol class="olist">
+        <li>Test</li>
+        <li>Test 2</li>
+        <li>Test 3</li>
+      </ol>
+    </div>
+    <script>
+      let classList = document.querySelector(".container").classList;
+      console.log(classList);
+      // gives all the class lists on that specific class - tyo particular class ma vayeko element ma lageko sabai class ko list haru dinxa.
+
+      classList.add("new-button"); // adding new class
+      console.log(classList);
+
+      classList.remove("new-button");
+      console.log(classList);
+    </script>
+  </body>
+</html>
