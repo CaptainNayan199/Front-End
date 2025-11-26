@@ -95,6 +95,7 @@
       let initial = 0;
       function counter() {
         initial++;
+        localStorage.setItem("initialValue", initial);
         document.querySelector(".onPressed").innerText = initial;
         if (initial % 2 == 0) {
           document.querySelector(".onPressed").classList.add("evenColor");

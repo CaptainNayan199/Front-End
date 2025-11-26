@@ -17,6 +17,14 @@
       document.querySelector(".main").removeChild(newElement); // the new child is been removed from the container.
 
       // Replace child can also be done there using replaceChild() method.
+
+      let div = document.createElement("div");
+
+      div.className = "card";
+      div.setAttribute("id", "profileCard");
+      div.style.background = "lightgray";
+
+      document.querySelector(".main").appendChild(div);
     </script>
   </body>
 </html>

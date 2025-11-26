@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        margin: 50px;
+        height: 500px;
+        width: 600px;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main"></div>
+    <script>
+      // creating a new element
+
+      let newButton = document.createElement("button");
+
+      let newHeading = document.createElement("h2");
+
+      let newDiv = document.createElement("div");
+
+      newDiv.style.height = "200px";
+      newDiv.style.width = "200px";
+      newDiv.style.backgroundColor = "green";
+
+      newHeading.innerText = "Hey, I am from js";
+
+      newButton.innerText = "New Button";
+      newButton.setAttribute("id", "dhairya");
+      newButton.style.color = "red";
+
+      document.querySelector(".main").appendChild(newButton);
+      document.querySelector(".main").appendChild(newHeading);
+      document.querySelector(".main").appendChild(newDiv);
+
+      // document.querySelector(".main").removeChild(newButton);
+    </script>
+  </body>
+</html>

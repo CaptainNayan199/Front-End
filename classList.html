@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nayan batta container">
+        <button type="submit" class="firstButton secondButton clickButton">
+          Click me
+        </button>
+      </div>
+    </div>
+    <script>
+      //console.log(document.querySelector(".secondButton").textContent);
+
+      console.log(document.querySelector(".clickButton").classList);
+
+      document.querySelector(".clickButton").classList.add("thirdButton");
+
+      console.log(document.querySelector(".clickButton").classList);
+
+      document.querySelector(".clickButton").classList.remove("clickButton");
+      console.log(document.querySelector(".firstButton").classList);
+    </script>
+  </body>
+</html>
