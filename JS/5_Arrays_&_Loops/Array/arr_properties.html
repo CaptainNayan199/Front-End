@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let newArr = ["Nayan", 10, false, null, { salary: "2 Crore" }];
+    // console.log(typeof newArr);
+
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //console.log(numbers[0]); // 1 will be the output.
+
+    //console.log(Array.isArray(numbers)); // is object an array?
+
+    //console.log(numbers.length); //length of an array
+
+    //console.log(numbers.push(1212)); //add new element at the end
+
+    // console.log(numbers.pop()); // removes the last array element
+
+    // shift / unshift is same as push and pop, the only difference is that push and pop works on right side whereas shift/unshift works on left.
+
+    //splice - remove or add elements from any particular locations
+
+    //let arr = [5, 10, 15, 20, 1, 9];
+    //arr.splice(0, 2); // start from 0 index and delete 2 elements
+    //console.log(arr);
+
+    // toString - converts any arrays into strings
+    //console.log(arr.toString());
+
+    //sort - arrange in any particular order.
+    //console.log(arr.sort());
+
+    //de structuring of an array.
+    let arr = [5, 10, 15, 20, 1, 9];
+    let [a, b, c, d, e, f] = arr;
+    console.log(a, b, c, d, e, f);
+  </script>
+</html>

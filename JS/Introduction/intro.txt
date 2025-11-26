@@ -1,4 +1,0 @@
-JS is one of the most popular programming language. It is mostly used to build dynamic websites, chrome extensions and nowadays even in app and AI sector.
-We can run JS in console of the website or in our native window as well by installing node.
-1. DOM - Document Object Model or DOM is a whole model of the website. We can alter the page like altering the html, css, performing actions and all the actions using JS.
-JS is an interpreted language but modern engines uses JIT(Just in Time) compiler for better speed and performance.

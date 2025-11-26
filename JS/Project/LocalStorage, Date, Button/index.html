@@ -92,7 +92,7 @@
         }
       }
 
-      let initial = 0;
+      let initial = localStorage.getItem("initialValue") || 0;
       function counter() {
         initial++;
         localStorage.setItem("initialValue", initial);

@@ -1,0 +1,9 @@
+In this we will cover following topics : 
+
+1. Array intro
+2. Array syntax and values
+3. Properties & Methods
+4. Loop
+5. Types of Loops
+6. Accumulator pattern
+7. Break & continue
