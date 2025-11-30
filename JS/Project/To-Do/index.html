@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier New", Courier, monospace;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f0f4f8;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .input-section {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .task-input {
+        flex: 1;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      .task-input:focus {
+        border-color: #007bff;
+      }
+
+      .add-btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .add-btn:hover {
+        background-color: #0056b3;
+      }
+
+      .task-list {
+        list-style: none;
+      }
+
+      .task-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .task-text {
+        flex: 1;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .task-text.completed {
+        text-decoration: line-through;
+        color: #888;
+      }
+
+      .task-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .complete-btn,
+      .delete-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .complete-btn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .complete-btn:hover {
+        background-color: #1e7e34;
+      }
+
+      .delete-btn {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      .delete-btn:hover {
+        background-color: #c82333;
+      }
+
+      .info-section {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border-radius: 5px;
+      }
+
+      .info-section p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+
+      .empty-message {
+        text-align: center;
+        color: #888;
+        font-style: italic;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📝 To-Do List</h1>
+      <div class="input-section">
+        <input
+          type="text"
+          class="task-input"
+          placeholder="Enter a new task..."
+        />
+        <button class="add-btn">Add</button>
+      </div>
+      <ul class="task-list"></ul>
+      <div class="info-section">
+        <p>Total tasks: <span class="total-count">0</span></p>
+        <p>Completed: <span class="completed-count">0</span></p>
+        <p>Pending: <span class="pending-count">0</span></p>
+      </div>
+    </div>
+
+    <script>
+      // To-Do List using Array.slice() method
+      let taskList = [];
+
+      const taskInput = document.querySelector(".task-input");
+      const addBtn = document.querySelector(".add-btn");
+      const taskListEl = document.querySelector(".task-list");
+      const totalCount = document.querySelector(".total-count");
+      const completedCount = document.querySelector(".completed-count");
+      const pendingCount = document.querySelector(".pending-count");
+
+      // Load tasks from localStorage
+      function loadTasks() {
+        const saved = localStorage.getItem("todoList");
+        if (saved) {
+          taskList = JSON.parse(saved);
+          renderTasks();
+        }
+      }
+
+      // Save tasks to localStorage
+      function saveTasks() {
+        localStorage.setItem("todoList", JSON.stringify(taskList));
+      }
+
+      // Add a new task
+      function addTask() {
+        const taskText = taskInput.value.trim();
+        if (taskText === "") {
+          return;
+        }
+
+        const newTask = {
+          id: Date.now(),
+          text: taskText,
+          completed: false,
+        };
+
+        // Using slice() to create a copy and add new task
+        taskList = taskList.slice().concat(newTask);
+
+        taskInput.value = "";
+        saveTasks();
+        renderTasks();
+      }
+
+      // Delete a task using slice() method
+      function deleteTask(taskId) {
+        const index = taskList.findIndex((task) => task.id === taskId);
+        if (index !== -1) {
+          // Using slice() to remove the task
+          // Creates a new array with elements before and after the deleted item
+          taskList = taskList.slice(0, index).concat(taskList.slice(index + 1));
+          saveTasks();
+          renderTasks();
+        }
+      }
+
+      // Toggle task completion using slice()
+      function toggleComplete(taskId) {
+        const index = taskList.findIndex((task) => task.id === taskId);
+        if (index !== -1) {
+          // Using slice() to create copies of array portions
+          const before = taskList.slice(0, index);
+          const after = taskList.slice(index + 1);
+          const updatedTask = {
+            ...taskList[index],
+            completed: !taskList[index].completed,
+          };
+
+          taskList = before.concat(updatedTask, after);
+          saveTasks();
+          renderTasks();
+        }
+      }
+
+      // Render tasks to the DOM
+      function renderTasks() {
+        taskListEl.innerHTML = "";
+
+        if (taskList.length === 0) {
+          taskListEl.innerHTML =
+            '<li class="empty-message">No tasks yet. Add one above!</li>';
+        } else {
+          // Using slice() to create a copy for rendering (preserves original order)
+          const tasksToRender = taskList.slice();
+
+          tasksToRender.forEach((task) => {
+            const li = document.createElement("li");
+            li.className = "task-item";
+            li.innerHTML = `
+              <span class="task-text ${task.completed ? "completed" : ""}">${task.text}</span>
+              <div class="task-actions">
+                <button class="complete-btn" data-id="${task.id}">
+                  ${task.completed ? "Undo" : "Done"}
+                </button>
+                <button class="delete-btn" data-id="${task.id}">Delete</button>
+              </div>
+            `;
+            taskListEl.appendChild(li);
+          });
+        }
+
+        updateCounts();
+      }
+
+      // Update task counts using slice()
+      function updateCounts() {
+        // Using slice() to create copies for filtering
+        const allTasks = taskList.slice();
+        const completed = allTasks.filter((task) => task.completed).length;
+        const pending = allTasks.length - completed;
+
+        totalCount.textContent = allTasks.length;
+        completedCount.textContent = completed;
+        pendingCount.textContent = pending;
+      }
+
+      // Event Listeners
+      addBtn.addEventListener("click", addTask);
+
+      taskInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          addTask();
+        }
+      });
+
+      // Event delegation for task actions
+      taskListEl.addEventListener("click", (e) => {
+        if (e.target.classList.contains("complete-btn")) {
+          const taskId = parseInt(e.target.dataset.id);
+          toggleComplete(taskId);
+        }
+        if (e.target.classList.contains("delete-btn")) {
+          const taskId = parseInt(e.target.dataset.id);
+          deleteTask(taskId);
+        }
+      });
+
+      // Initialize
+      loadTasks();
+    </script>
+  </body>
+</html>
