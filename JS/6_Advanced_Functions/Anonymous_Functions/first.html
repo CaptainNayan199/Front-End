@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Anonymous functions are the functions without any name -->
+    <!-- Functions can be assigned to a variable -->
+    <!-- Anonymous functions can be a properties in objects -->
+    <!-- Can be passed as arguments to other functions -->
+    <!-- invoked using () after the func name or variable-->
+    <!-- Fuctions are also like an object in js -->
+    <script>
+      let sum = function (a, b) {
+        return a + b;
+      };
+
+      //console.log(sum(4, 5));
+
+      let newSum = sum(4, 5);
+      //console.log(newSum);
+
+      //passing func as an arguments
+
+      let newSS = function (a, b, c, sum) {
+        let sum1 = sum(a, b);
+        return sum(sum1, c);
+      };
+
+      console.log(newSS(3, 3, 3, sum));
+
+      console.log(typeof sum); //function
+    </script>
+  </body>
+</html>

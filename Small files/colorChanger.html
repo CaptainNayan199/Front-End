@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color changer</title>
+    <style>
+      .main {
+        height: 300px;
+        width: 300px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+      }
+
+      .main button {
+        height: 100px;
+        width: 100px;
+        font-size: 50px;
+        color: white;
+      }
+
+      .greenColor {
+        background-color: green;
+      }
+
+      .redColor {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <button type="submit" class="changer">0</button>
+    </div>
+    <script>
+      let initial = 0;
+      function changeColor() {
+        initial++;
+        document.querySelector(".changer").innerText = initial;
+        if (initial % 2 == 0) {
+          document.querySelector(".changer").classList.add("greenColor");
+          document.querySelector(".changer").classList.remove("redColor");
+        } else {
+          document.querySelector(".changer").classList.remove("greenColor");
+          document.querySelector(".changer").classList.add("redColor");
+        }
+      }
+
+      document.querySelector(".changer").onclick = () => {
+        changeColor();
+      };
+    </script>
+  </body>
+</html>

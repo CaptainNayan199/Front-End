@@ -1,0 +1,10 @@
+In this chapter we will be covering some advanced js concepts like:
+1 Anonymous functions as values
+2 Arrow functions
+3 SetTimeout and setInterval
+4 Event listerner
+5 For each loop
+6 Array methods
+
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #results {
+        border: 1px solid #ccc;
+        width: 200px;
+        margin-top: 5px;
+        border-radius: 4px;
+        display: none; /* Hidden until user types */
+      }
+      .item {
+        padding: 8px;
+        cursor: pointer;
+      }
+      .item:hover {
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="search" placeholder="Search fruits..." />
+    <div id="results"></div>
+
+    <script>
+      const fruits = [
+        "Apple",
+        "Avocado",
+        "Banana",
+        "Blueberry",
+        "Cherry",
+        "Mango",
+        "Melon",
+        "Orange",
+        "Papaya",
+        "Pineapple",
+        "Strawberry",
+      ];
+
+      const searchInput = document.getElementById("search");
+      const resultsBox = document.getElementById("results");
+
+      searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase();
+
+        // Clear previous results
+        resultsBox.innerHTML = "";
+
+        if (query === "") {
+          resultsBox.style.display = "none";
+          return;
+        }
+
+        const filtered = fruits.filter((fruit) =>
+          fruit.toLowerCase().startsWith(query)
+        );
+
+        if (filtered.length === 0) {
+          resultsBox.style.display = "none";
+          return;
+        }
+
+        resultsBox.style.display = "block";
+
+        filtered.forEach((fruit) => {
+          const div = document.createElement("div");
+          div.classList.add("item");
+          div.textContent = fruit;
+
+          div.addEventListener("click", () => {
+            searchInput.value = fruit;
+            resultsBox.style.display = "none"; // hide after selecting
+          });
+
+          resultsBox.appendChild(div);
+        });
+      });
+    </script>
+  </body>
+</html>

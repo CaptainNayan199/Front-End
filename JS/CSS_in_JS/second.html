@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --accent: #6c5ce7;
+      }
+      #chip {
+        padding: 8px 12px;
+        background: var(--accent);
+        color: white;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chip">Accent chip</div>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+
+    <script>
+      const chip = document.getElementById("chip");
+      document.getElementById("blue").addEventListener("click", () => {
+        // kebab-case property set via setProperty
+        chip.style.setProperty("background-color", "royalblue");
+      });
+      document.getElementById("green").addEventListener("click", () => {
+        // or via camelCase (for non-custom props)
+        chip.style.backgroundColor = "seagreen";
+      });
+
+      // read inline/kebab:
+      console.log(chip.style.getPropertyValue("background-color")); // "" if no inline
+      // read computed var on root:
+      const root = document.documentElement;
+      console.log(getComputedStyle(root).getPropertyValue("--accent").trim()); // "#6c5ce7"
+
+     // box.style.removeProperty("width"); // removes inline width (kebab case)
+     // box.style.width = ""; // also clears inline width (camelCase)
+    </script>
+  </body>
+</html>

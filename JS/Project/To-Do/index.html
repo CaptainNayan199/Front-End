@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        margin: 10px;
+        text-align: center;
+      }
+
+      .todoContainer {
+        margin: 20px;
+        height: 600px;
+        width: 700px;
+        background-color: aquamarine;
+      }
+
+      .first {
+        background-color: none;
+        border: 3px solid red;
+        padding: 20px;
+        height: 150px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 3px solid black;
+      }
+
+      .huhu {
+        height: 354px;
+      }
+
+      .first input {
+        height: 50px;
+        width: 220px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .first button {
+        background-color: green;
+        color: white;
+        height: 50px;
+        width: 100px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      .first .showTodo {
+        height: 100%;
+        flex: 1;
+        overflow-y: auto;
+        border: 3px solid black;
+      }
+
+      .first .showTodo .item-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>To Do App</h2>
+    <div class="todoContainer">
+      <div class="first">
+        <input type="text" class="todo" placeholder="Enter your TODO here" />
+        <input type="date" class="date" placeholder="Enter your TODO here" />
+        <button type="submit" class="add">Add</button>
+      </div>
+      <br />
+      <div class="first huhu">
+        <div class="showTodo"></div>
+      </div>
+    </div>
+    <script>
+      let todoList = [];
+      function addTodo() {
+        let userToDo = document.querySelector(".todo").value;
+        let userDate = document.querySelector(".date").value;
+        todoList.push({ task: userToDo, dueTime: userDate });
+        document.querySelector(".todo").value = "";
+        document.querySelector(".date").value = "";
+        displayToDo();
+      }
+
+      function displayToDo() {
+        let container = document.querySelector(".showTodo");
+        let myCode = "";
+        for (let i = 0; i < todoList.length; i++) {
+          myCode += `
+          <div class='item-container' >
+          <p>${todoList[i]["task"]}</p>
+          <p>${todoList[i]["dueTime"]}</p>
+          <button class='deleteTodo' onclick= 'todoList.splice(${i}, 1)
+          displayToDo()' >Delete</button>
+          </div>
+          `;
+        }
+        container.innerHTML = myCode;
+      }
+
+      //function deleteTodo() {
+      //  todoList.slice();
+      //}
+
+      displayToDo();
+      document.querySelector(".add").onclick = () => {
+        addTodo();
+      };
+    </script>
+  </body>
+</html>

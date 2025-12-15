@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Variables & JS</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #111827;
+        --accent: #2563eb;
+        --card-padding: 16px;
+      }
+
+      .dark {
+        --bg: #0b1220;
+        --text: #e6eef8;
+        --accent: #7dd3fc;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, sans-serif;
+        transition: background 240ms ease, color 240ms ease;
+        padding: 24px;
+      }
+
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(0, 0, 0, 0.02)
+        );
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: var(--card-padding);
+        border-radius: 10px;
+        width: 300px;
+      }
+
+      .accent {
+        color: var(--accent);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleTheme">Toggle theme</button>
+    <button id="increase">Increase padding</button>
+    <button id="decrease">Decrease padding</button>
+
+    <div class="card" id="card">
+      <h3>Card <span class="accent">Demo</span></h3>
+      <p>Padding controlled by CSS variable <code>--card-padding</code></p>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      const toggleThemeBtn = document.getElementById("toggleTheme");
+      const increase = document.getElementById("increase");
+      const decrease = document.getElementById("decrease");
+      const card = document.getElementById("card");
+
+      // Toggle theme by toggling a class on <html>
+      toggleThemeBtn.addEventListener("click", () => {
+        root.classList.toggle("dark");
+      });
+
+      // Read current --card-padding and change it
+      function readVar(name) {
+        // returns numeric px value as number when px unit
+        const val = getComputedStyle(root).getPropertyValue(name).trim();
+        return parseFloat(val); // parseFloat handles "16px" -> 16
+      }
+
+      function setVar(name, value) {
+        root.style.setProperty(name, value + "px");
+      }
+
+      increase.addEventListener("click", () => {
+        const cur = readVar("--card-padding") || 16;
+        setVar("--card-padding", Math.min(cur + 4, 64));
+      });
+
+      decrease.addEventListener("click", () => {
+        const cur = readVar("--card-padding") || 16;
+        setVar("--card-padding", Math.max(cur - 4, 4));
+      });
+    </script>
+  </body>
+</html>

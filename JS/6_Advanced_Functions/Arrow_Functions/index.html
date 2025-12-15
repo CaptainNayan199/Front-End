@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Arrow function is a more concise and precise way of writing anonyous function -->
+    <!-- For single argument: small braket is optional -->
+    <!-- For single line : curly and return optional -->
+    <!-- often used while passing functions ar arguments -->
+
+    <script>
+      let newFunc = function (a, b) {
+        return a + b;
+      };
+
+      //in place of above function we can do this using arrow function
+
+      let second = (a, b) => {
+        return a + b;
+      };
+
+      // OR simply
+
+      let third = (a, b) => a + b;
+
+      let square = (num) => num * num;
+    </script>
+  </body>
+</html>

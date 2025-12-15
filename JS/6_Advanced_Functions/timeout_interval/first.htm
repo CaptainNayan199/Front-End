@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- These two are the functions for executing code asynchronously, after a certain delay. -->
+    <!-- Set time out - runs once -->
+    <!-- Set interval - runs repeatedly -->
+    <!-- set time out is cancelled by using clearTimeOut(timerId) function -->
+    <!-- Cleat interval is cancelled by using clearInterval(intervalId) function -->
+
+    <script>
+      //setTimeout function
+
+      setTimeout(function () {
+        console.log("Heheheheh");
+      }, 4000);
+
+      // always remember - setTimeout function returns a timer id
+
+      let timerId = setTimeout(() => console.log("Nayan"), 3000);
+      console.log(timerId);
+
+      // we can stop the setTimeout using clearTimeout function
+
+      clearTimeout(timerId); // this will clear the setTimeout
+
+      // set Interval
+
+      //setInterval(() => console.log("Hhuhuhuhuh"), 2000);
+
+      // Now again we can cancel it by using clearInterval
+
+      let inter = setInterval(() => console.log("Sad"), 2000);
+      clearInterval(inter);
+
+      let newInterval = setInterval(
+        () => console.log(" I will be gone after 5 seconds"),
+        1000
+      );
+
+      setTimeout(() => clearInterval(newInterval), 5000);
+    </script>
+  </body>
+</html>

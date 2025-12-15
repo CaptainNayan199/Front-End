@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="head2">Heheheheheheheh</h2>
+    <!-- <button type="submit" class="hehe">Click me</button> <br /><br />
+    <button type="submit" class="huhu">Color Change</button>
+    <p class="show"></p>
+
+    <input id="name" placeholder="Type your name" />
+    <p id="output"></p>
+
+    <div id="box" style="width: 300px; height: 300px; background: #ddd"></div>
+
+    <div id="box2" style="background: pink; padding: 30px">
+      <p id="text">Click me</p>
+    </div>
+
+    <div id="parent" style="background: red; padding: 20px">
+      Parent
+      <button id="child" style="margin-top: 10px">Child Button</button>
+    </div>
+
+    <a href="https://google.com" id="myLink">Go to Google</a>
+
+    <form id="myForm">
+      <input type="text" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="parent" style="padding: 20px; background: red">
+      Parent
+      <div id="child" style="padding: 20px; background: yellow">Child</div>
+    </div>
+
+    <button id="btn">Click Me</button>
+
+    <div id="test" style="padding: 20px; background: lightblue">Click Me</div>
+
+    <div id="container" style="padding: 20px; background: lightgray">
+      <button>Button 1</button>
+      <button>Button 2</button>
+      <button>Button 3</button>
+    </div>
+
+    <!-- Some popular events used :  -->
+    <!-- Keyboard events :  -->
+    <!-- keydown - when a key is pressed down. -->
+    <!-- Key up - when a key is released -->
+    <!-- <input type="text" id="inputBox" placeholder="Type something..." /> -->
+
+    <!-- Mouse events : fired when user interacts with a pointing device. -->
+    <!-- click, dblclick, mousedown, mouseup, mousemove, mouseenter, mouseleave, mouseover, mouseout -->
+    <!-- <button id="btn">Huhuhuhuhuh</button> -->
+
+    <!-- Input/text events - fired on form controls like input, textarea, select. -->
+    <!-- input, change, focus, blur, select, cut, copy, paste. -->
+
+    <!-- <h2>Input Events Demo</h2>
+
+    <input type="text" id="myInput" placeholder="Type something here" />
+
+    <p id="output"></p>
+
+    <input type="text" class="practice" placeholder="Enter anything here" /> -->
+
+    <script>
+      document.querySelector("#inputBox").addEventListener("input", (event) => {
+        console.log("Nayan is typing.............");
+      });
+      document.querySelector("#inputBox").addEventListener("paste", (event) => {
+        console.log(
+          "Pasted data : ",
+          document.querySelector("#inputBox").value
+        );
+      });
+
+      let elem = document.querySelector(".head2");
+
+      document.addEventListener("selectstart", (event) => {
+        event.preventDefault();
+      });
+
+      /*
+      document.querySelector(".hehe").addEventListener("click", (event) => {
+        document.querySelector(".show").innerText = "Above button is clicked.";
+      });
+
+      document.querySelector(".hehe").addEventListener("mouseover", (event) => {
+        console.log("The mouse is above the button.");
+      });
+
+      document.querySelector(".hehe").addEventListener("mouseout", (event) => {
+        console.log("The mouse is away the button.");
+      });
+
+      let button = document.querySelector(".huhu");
+      button.addEventListener("click", (event) => {
+        button.style.color = "red";
+        button.style.backgroundColor = "aqua";
+      });
+
+      const input = document.getElementById("name");
+      const out = document.getElementById("output");
+      input.addEventListener("keyup", function () {
+        out.textContent = input.value;
+      });
+
+      //event object in event listening
+      // element.addEventListener("click", (event) => {
+      //  console.log(event);
+      //});
+
+      // event object properties :
+
+      //event.type - tell what event has happened.
+      button.addEventListener("click", (e) => {
+        console.log(e.type); // "click"
+      });
+
+      // event.target - tells exact element where the event occured. The actual element you clicked on(where the event originally happened)
+      document.addEventListener("click", (e) => {
+        console.log(e.target);
+      });
+
+      // event.currentTarget - the element whose listener is currently running. The element that has the event listener attached.(the element whose code is currently running.)
+      //div.addEventListener("click", (e) => {
+      //  console.log(e.currentTarget); // always div
+      // });
+
+      document.querySelector("#parent").addEventListener("click", (e) => {
+        console.log("TARGET:", e.target);
+        console.log("CURRENT TARGET:", e.currentTarget);
+      });
+
+      document.getElementById("box").addEventListener("click", (e) => {
+        console.log("TARGET:", e.target.id);
+        console.log("CURRENT:", e.currentTarget.id);
+      });
+
+      //Mouse co-ordinates
+
+      // e.screenX; // X position of mouse from left edfe of your monitor
+      // e.screenY; // Y position of mouse from TOP EDGE of your monitor
+      // They are outermost reference.
+      document.addEventListener("mousemove", (e) => {
+        console.log("Screen X:", e.screenX);
+        console.log("Screen Y:", e.screenY);
+      }); // we rarely use this.
+
+      //Browser window co-ordinates.
+      // e.clientX; //
+      // e.clientY; //
+      // mouse position relative to the viewport (visible browser window). Does NOT include page scroll. Good for UI interactions positioned in the viewport. It is the distance in pixels from the top-left corner of the viewport to the pointer.
+
+      document.addEventListener("mousemove", (e) => {
+        console.log("clientX:", e.clientX, "clientY:", e.clientY);
+      });
+
+      //element relative co-ordinates
+      //e.offsetX; //
+      // e.offsetY; //
+      // mouse position relative to the event target element (its padding edge). Good for drawing inside an element or element-level hit-testing. distance in pixels from the top-left corner of the target element's padding edge to the pointer (i.e., relative to the element that fired the event — e.target).
+
+      //element.addEventListener("click", (e) => {
+      //   console.log("offsetX:", e.offsetX, "offsetY:", e.offsetY);
+      // });
+
+      //pageX / pageY : distance in pixels from the top-left corner of the entire document (document origin 0,0) to the pointer. This includes the vertical/horizontal scroll offset.
+      document.addEventListener("mousemove", (e) => {
+        console.log("pageX:", e.pageX, "pageY:", e.pageY);
+      });
+
+      let box = document.querySelector("#box");
+      box.addEventListener("mousemove", (e) => {
+        console.log("ClientX:", e.clientX);
+        console.log("ClientY:", e.clientY);
+        console.log("OffsetX:", e.offsetX);
+        console.log("OffsetY:", e.offsetY);
+      });
+
+      let input2 = document.querySelector("#name");
+
+      input2.addEventListener("keydown", (e) => {
+        console.log("Key pressed:", e.key);
+        console.log("Physical key:", e.code);
+        console.log("Shift pressed?", e.shiftKey);
+        console.log("Alt pressed?", e.altKey);
+        console.log("Ctrl pressed?", e.ctrlKey);
+      });
+
+      // event.timeStamp - shows the time event occured.
+      document.addEventListener("click", (e) => {
+        console.log("Event happened at:", e.timeStamp); //shows time in ms, it means event happened after ...ms after the page loaded.
+      });
+
+      // event.preventDetault()
+      //prevent link from opening
+      let link = document.querySelector("#myLink");
+
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Link click prevented!"); //clicking the link does not go to google.
+      });
+
+      //prevent form from submitting
+      document.querySelector("#myForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Form submission stopped!"); //form will not be submitted, very important when doing form validation.
+      });
+
+      //event.stopPropagation() - stops the event from bubbling to parent elements.
+
+      document.querySelector("#parent").addEventListener("click", () => {
+        console.log("Parent clicked");
+      });
+
+      document.querySelector("#child").addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("Child clicked"); //now the parent will not log, because we stopped propagation.
+      });
+
+      //event.stopImmediatePropagation() - stops bubbling, and any other listeners on the same element.
+
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", (e) => {
+        console.log("Handler 1");
+        e.stopImmediatePropagation(); // stops others on SAME element
+      });
+
+      btn.addEventListener("click", () => {
+        console.log("Handler 2"); //this never runs as their is propagation on the first.
+      });
+
+      //event.bubbles - check if event bubbles
+      document.querySelector("#test").addEventListener("click", (e) => {
+        console.log("Does this event bubble?", e.bubbles); //true - most even bubbles except a few like focu, blur, etc.
+      });
+
+      // event delegation : If you put an event listener on a DIV, all its child elements (buttons, inputs, etc.) will also trigger that event — BUT only because of event bubbling. This is called event delegation. Because in js event bubbles up.
+
+      //Meaning : When you click a button → the event starts at the button → goes up to its parent → then to body → then document → then window.
+
+      document.querySelector("#container").addEventListener("click", (e) => {
+        console.log("Div clicked!");
+        console.log("Actual click target:", e.target);
+      });
+
+      //So in above example : Even though there is NO CLICK EVENT ON THE BUTTONS, the DIV's listener runs. Because the event bubbled from the button → to the div. This is exactly how event delegation works. You dont attach a click event to each button. You attach one event to the parent div.
+
+      //div.addEventListener("click", (e) => {
+      //  if (e.target.tagName === "BUTTON") {
+      //    console.log("You clicked:", e.target.innerText);
+      /*   }
+            });
+
+            //Why event delegation is important : no need to add seperate listeners to each button, faster, cleaner, works even if buttons are created later with JS. very important in real-world apps.
+
+            // Some popular and important events
+            // Keyboard events :
+            const input3 = document.getElementById("inputBox");
+            input3.addEventListener("keydown", (e) => {
+              console.log("Key pressed:", e.key);
+              if (e.key === "ArrowUp") {
+                console.log("Up arrow pressed!");
+              }
+            });
+
+            // Mouse events : click + hover
+            const btn2 = document.getElementById("btn");
+
+            btn2.addEventListener("click", () => console.log("Button clicked!"));
+            btn2.addEventListener(
+              "mouseenter",
+              () => (btn.style.background = "yellow")
+            );
+            btn.addEventListener("mouseleave", () => (btn.style.background = ""));
+
+            // input events :
+            const input4 = document.getElementById("myInput");
+            const output = document.getElementById("output");
+
+            // 1️⃣ input: triggers whenever value changes while typing
+            input4.addEventListener("input", () => {
+              output.textContent = "Input event: " + input.value;
+            });
+
+            // 2️⃣ change: triggers when input loses focus and value has changed
+            input4.addEventListener("change", () => {
+              console.log("Change event: value changed to", input.value);
+            });
+
+            // 3️⃣ focus: triggers when input is clicked/focused
+            input4.addEventListener("focus", () => {
+              output.textContent = "Focus event: input is focused";
+            });
+
+            // 4️⃣ blur: triggers when input loses focus
+            input4.addEventListener("blur", () => {
+              output.textContent = "Blur event: input lost focus";
+            });
+
+            // 5️⃣ select: triggers when user selects text inside input
+            input4.addEventListener("select", () => {
+              output.textContent = "Select event: text selected";
+            });
+
+            // 6️⃣ cut: triggers when user cuts text
+            input4.addEventListener("cut", () => {
+              output.textContent = "Cut event: text cut";
+            });
+
+            // 7️⃣ copy: triggers when user copies text
+            input4.addEventListener("copy", () => {
+              output.textContent = "Copy event: text copied";
+            });
+
+            // 8️⃣ paste: triggers when user pastes text
+            input4.addEventListener("paste", () => {
+              output.textContent = "Paste event: text pasted";
+            });
+
+            // we can prevent user to select a text using css : user-select: none , or in js use event - selectstart and use prevent default.
+            document
+            .querySelector(".practice")
+            .addEventListener("keydown", (event) => {
+              console.log(event.key);
+              if (event.key === "ArrowUp") alert("Yes you pressed arrow up key");
+              else alert("No, You didnt pressed arrow up key.");
+            });
+            */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="submit" class="hehe">Click me</button>
+    <!-- What is an event ? Occurences like clicks, mouse movements, keyboard input, etc. -->
+    <!-- Query selector is used to attach listeners. -->
+    <!-- Multiple listeners - We can add more than one listeners. -->
+    <!-- To remove listeners - use removeListener('event', functionVariable) -->
+    <!-- Eg: onclick, oncopy, onselect, etc. -->
+    <!-- addEventListener is used in any element to handle events. -->
+
+    <script>
+      let button = document.querySelector(".hehe");
+
+      let buttonActivity = (event) => {
+        console.log("The button is getting clicked");
+      };
+      button.addEventListener("click", buttonActivity);
+
+      let printDate = (event) => console.log(new Date());
+      button.addEventListener("click", printDate);
+
+      // removing event
+      button.removeEventListener("click", buttonActivity);
+
+      // Other event listeners : fullscreenchange, click, copy, gestures, mouse events, double clicked, right clicked
+    </script>
+  </body>
+</html>

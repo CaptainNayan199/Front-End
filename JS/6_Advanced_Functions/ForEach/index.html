@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- For each is a method for array iteration, often preferred for readability -->
+    <!-- Parameters for forEach - one for item, optional for second index. -->
+    <!-- Using return is similar to continue in traditional loops. -->
+    <!-- Not straightforward to break out of a forEach loop -->
+    <!-- When we need to perform an action on each array element and dont need to break early. -->
+
+    <script>
+      let names = ["Ujjwal", "Kishan", "Rahul", "Sandesh", "Tommy"];
+
+      //Using normal loop :
+
+      // for (let i = 0; i < names.length; i++) {
+      //  console.log(names[i]);
+      // }
+
+      // Using foreach loop
+
+      names.forEach((names) => console.log(names));
+
+      let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      numbers.forEach((num) => console.log(`Square of ${num} is ${num * num}`));
+
+      //Where forEach is not to use : if there is a need to break, we can't because forEach works on a straight pattern. Works exactly like a continue for any condition(found condition? skip that and move to the next.)
+    </script>
+  </body>
+</html>
