@@ -1,0 +1,10 @@
+React Goals : 
+
+1. Empty app.jsx - show how things work - explain import and export - types of export and import, create another UI jsx file, import it too. React dynamicity(show how variables, functions, can be used using {} in react).
+
+2. make new random.jsx file to show how reusability works. Set changes to the main file and see how changes occurs on all the other used components - visualize ways to use css.
+
+3. *Using bootstrap in react. - install the bootstrap, import it in the main.jsx, apply some bootstrap components.
+
+4. Make a todo App - A small project - 1st Project.
+

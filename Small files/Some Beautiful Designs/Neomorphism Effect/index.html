@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neo Morphism Effect</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background-color: #111111;
+        color: #ffffff;
+      }
+
+      button {
+        color: white;
+        background: #212121;
+        padding: 0.7em 1.7em;
+        font-size: 10px;
+        border-radius: 0.5em;
+        transition: all 0.3s;
+        border: 1px solid #212121;
+        box-shadow: 6px 6px 12px #000, -6px -6px 12px #1f1f1f;
+      }
+      button:active {
+        color: #666;
+        box-shadow: inset 4px 4px 12px #000, inset -4px -4px 12px #1f1f1f;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Click me</button>
+  </body>
+</html>

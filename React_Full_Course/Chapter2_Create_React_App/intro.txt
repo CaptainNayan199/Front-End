@@ -1,0 +1,68 @@
+What will we be covering in this chapter?
+1. IDE Setup
+2. Create a React App
+3. Project Structure
+
+IDE - It is an Integrated Development Environment, a software suite that consolidates basic tolls required for software development.
+It is a central hub for coding, finding problems, testing.
+It is designed to improve developer efficiency.
+It simplifies complex tasks.
+It offers a unified workspace.
+IDE features :
+  1. COde autocompletion
+  2. Syntax highlighting
+  3. Version control
+  4. Error checking
+
+Process: 
+1. Install node (to make a small light server), IDE(VS Code)
+2. Create new react project
+
+
+How to create a react project?
+1. Using CRA(Create React App)
+2. Vite : a modern tool to create react project. It produces quick and small bundle size. To run the server, use `npm run dev`
+3. Use `npm start` for CRA
+
+#Process:
+1. npm create vite@latest
+2. Give project name.
+3. Choose and follow the options accordingly.
+4. cd project_name
+5. npm install (for all the packages)
+6. npm run dev - to run the project
+
+******************Project structure:*********************** 
+
+1. node_modules - this folder has all the installed node packages. It is created after `npm install` command. This can be huge, and never to be deleted or edited & uploaded to github. If mistakely deleted, then again run `npm install`.
+
+2. public - contains all the static files that doesn't change. Files here are served as-is. The index.html is generally kept under this foler.
+
+3. src(the major folder) : This is the main folder for the react code. This is where we write our react code. It usually contains main.jsx(entry point), app.jsx(root component), pages, hooks, styles, etc. 90% of our work happens here.
+
+  i. App.jsx - It is the main react component. This file is called by main.jsx.
+  ii. App.css - styles only related to App component(usually). Needs to be imported inside App.jsx
+  iii. index.css - global css, used for body styles, reset css, fonts, theme colors. Imported in the main.jsx
+
+  iv. main.jsx - the entry point - this is where react starts.
+  
+  a. components - contains the reusable parts of the UI, like buttons or headers. It is just a function that returns a UI.
+  b. assets - contains images, fonts, or other static files.
+  c. styles - contains CSS or other stylesheets.
+
+4 .gitignore - Tells Git what NOT to track, includes node_modules, .env.
+
+5. eslint.config.js - linting rules, helps catch bugs and bad practices. Optional but good for clean code
+
+6. index.html - the single HTML file, react mounts into this. Has a div whose id is root. So later, react injects everythin inside this div.
+
+7. package-lock.json - locks exact dependecy versions, ensures same install on every machine. Whenever we run `npm run dev` two files are created; package-lock and node modules.
+
+8. package.json - This file stores project names, dependencies, scripts, etc. When we run `npm run dev` - everything comes from here. This is the meta data of our project.
+
+9. README.md - Project documentation, instructions for running the app, userful for github.
+
+10. vite.config.js - vite configuration file, controls plugins, aliases, build settings, etc.
+
+
+

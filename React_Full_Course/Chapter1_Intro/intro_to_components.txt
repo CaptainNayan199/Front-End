@@ -1,0 +1,3 @@
+What are components in react ?
+Components are already built, reusbale, modular, smaller code parts Because of which we can later add these components in our document.
+React component is a tree of components with App component as the root bringing everything together.

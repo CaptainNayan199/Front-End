@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background-color: #111111;
+        color: #ffffff;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 900px;
+      }
+
+      .container .card {
+        overflow: hidden;
+        height: 300px;
+        width: 250px;
+        border-radius: 15px;
+        transition: 400ms;
+        cursor: pointer;
+      }
+
+      .card img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .container .card:hover {
+        transform: scale(1.1, 1.1);
+      }
+
+      .container:hover .card:not(:hover) {
+        transform: scale(1, 1);
+        filter: blur(10px);
+      }
+
+     /* .container:has(.card:hover) .card:not(:hover) {
+        filter: blur(10px);
+        transform: scale(1);
+      }
+        */
+    </style>
+    <title>Hover Image</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="/Hover Image/images/img1.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="/Hover Image/images/img2.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="/Hover Image/images/img3.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="/Hover Image/images/img4.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="/Hover Image/images/img5.jpg" alt="" />
+      </div>
+      <div class="card">
+        <img src="/Hover Image/images/img6.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

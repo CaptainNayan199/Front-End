@@ -1,5 +1,5 @@
 let bagItemObjects;
-const DELIVERY_FEE = 140
+let DELIVERY_FEE = 140
 window.addEventListener('load', event => {
   loadBagItemObjects()
   showDataInfo()
@@ -32,6 +32,8 @@ function loadBagItemObjects() {
 }
 
 function removeFromBag(itemId) {
+
+  // bagItems = bagItems.
   bagItems = bagItems.filter(bagId => bagId != itemId)
   localStorage.setItem('bagItems', JSON.stringify(bagItems))
   loadBagItemObjects()
@@ -39,13 +41,11 @@ function removeFromBag(itemId) {
   displayBagCount()
   showTotalPrice()
   // console.log(bagItems)
-
 }
 
 
 
 function generateItemCode(item) {
-  console.log(item)
   return `<div class="bag-item-container">
               <div class="item-left-part">
                 <img class="bag-item-img" src="../${item.image}" />
@@ -77,7 +77,6 @@ function generateItemCode(item) {
 
 function showTotalPrice() {
   let bag_summary = document.querySelector('.bag-summary')
-
   let totalItems = bagItemObjects.length
   let totalMRP = 0
   let totalDiscount = 0
@@ -86,9 +85,8 @@ function showTotalPrice() {
     totalDiscount += bagItem.price.original_price - bagItem.price.current_price
   })
 
+  DELIVERY_FEE = totalItems == 0 ? 0 : DELIVERY_FEE
   let finalPayment = (totalMRP - totalDiscount) + DELIVERY_FEE
-
-
 
   bag_summary.innerHTML = `<div class="bag-details-container">
             <div class="price-header">PRICE DETAILS (${totalItems} Items)</div>
@@ -104,7 +102,7 @@ function showTotalPrice() {
             </div>
             <div class="price-item">
               <span class="price-item-tag">Delivery Fee</span>
-              <span class="price-item-value">Rs 140</span>
+              <span class="price-item-value">Rs ${DELIVERY_FEE}</span>
             </div>
             <hr />
             <div class="price-footer">
@@ -115,7 +113,4 @@ function showTotalPrice() {
           <button class="btn-place-order">
             <div class="css-xjhrni">PLACE ORDER</div>
           </button>`
-
-
-
 }

@@ -1,0 +1,53 @@
+Here, in this chapter we will be covering : 
+1. File extensions.
+2. Class vs Function components
+3. What is JSX?
+4. Exporting component
+5. Other important points
+6. Dynamic components
+7. Reusable components
+
+
+## File extension : JS stands for Java Script. It contains regular JS codes.
+JSX - Stands for JS + XML. Combines JS with HTML-like structure(tags). Makes it easier to design UI components. JSX determines how the UI will look whereever the component is used. It's not HTML. Though it resembles HTML, its actually JS with XML. 
+JSX gets converted to regular javascript later on while compiling. For more visualization see babeljs.io/repl to know more about that process
+
+
+## Components : They are just a function that holds reusable elements. There are two types of components:
+  i. Class Components - They are stateful in nature, i.e. they can manage their state. They have certain lifecycle methods. They are like a boilerplate code and are not preferred anymore.
+
+  ii. Functional Components - They intially are stateless. They can use hooks for state and effects. Much more simpler and more concise. More popular too.
+
+
+
+Some other important points : 
+1. Naming - The first character must be capital.
+2. In vanilla, we cannot embed HTML like syntax directly, in react we can do so.
+3. In react, CSS can be directly imported into component files, allowing for modular and component-specific styling.
+
+
+
+## Dynamic Components : JSX allows creation of dynamic and interactive UI components.
+Using {}, we can embed any JS expression directly withing JSX. This includes variables, function calls, and more.
+
+
+
+## Reusable components : Components are modular, allowing for easy reuse across different parts of an application. Reusing components ensures UI consistency and reduces the chance of discrepancies.
+It reduces development time and effort by avoding duplication of code. Changes made to a reused componentnreflect everywhere its used, simplifying updated and bug fixes.
+
+
+## *Using Bootrstrap in React.
+Why Bootstrap : for responsiveness, pre-written components, easy to customize, cross-browser compatibility, open-source.
+
+install using - npm i bootstrap@5.3.8
+
+import using - import 'bootstrap/dist/css/bootstrap.min.css'
+
+
+
+
+
+
+
+
+

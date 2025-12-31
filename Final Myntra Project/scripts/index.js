@@ -1,5 +1,5 @@
 // We will add the elements from API/server(items.js) to html using js.
-let bagItems = []; // id jati sabai yaha basne ho ni
+let bagItems; // id jati sabai yaha basne ho ni
 
 
 

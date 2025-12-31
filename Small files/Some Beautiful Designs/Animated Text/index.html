@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Text</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background-color: #111111;
+        color: #ffffff;
+      }
+      .text {
+        width: 20em;
+      }
+
+      span {
+        font-size: 23px;
+      }
+
+      span::after {
+        content: "";
+        color: aqua;
+        padding-left: 8px;
+        animation: text 5s infinite;
+      }
+
+      @keyframes text {
+        0%,
+        25% {
+          content: "Ujjwal";
+        }
+        26%,
+        50% {
+          content: "Birendra";
+        }
+        51%,
+        75% {
+          content: "Suresh";
+        }
+        76%,
+        100% {
+          content: "Krish";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <span>I am </span>
+    </div>
+  </body>
+</html>
